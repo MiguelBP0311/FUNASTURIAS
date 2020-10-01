@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "956381856655",
+    "firebase_url": "https://funasturias-bd.firebaseio.com",
+    "project_id": "funasturias-bd",
+    "storage_bucket": "funasturias-bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956381856655:android:d6f7fc14de727cf57901fa",
+        "android_client_info": {
+          "package_name": "com.example.funasturias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956381856655-0r6256hidgf4menng93tveq8s95dhkev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.funasturias",
+            "certificate_hash": "55e10b6e2ea9477e489fdfd33a66d095e113d30f"
+          }
+        },
+        {
+          "client_id": "956381856655-oisi6kbrg9vvr354qv76mthif04760n2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC314t92Dez-p7LM3UHvrjUwj7zvZWC_Ew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956381856655-oisi6kbrg9vvr354qv76mthif04760n2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
