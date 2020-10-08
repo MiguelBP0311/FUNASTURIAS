@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,9 +53,14 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==1){
             if (resultCode == RESULT_OK) {
-                // Inicio Correcto
+                Intent intencion= new Intent(this, PantallaZonas.class);
+                startActivity(intencion);
+
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                // ...
+
+            } else{
+               Toast mensajeNoRegistrado= Toast.makeText(this, "Si quiere usar esta APP es necesario registrarse. Use su email o Cuenta de Google", Toast.LENGTH_LONG);
+                mensajeNoRegistrado.show();
             }
         }
     }

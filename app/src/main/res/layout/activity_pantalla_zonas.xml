@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PantallaZonas">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewINFO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Para Continuar Seleccione una Zona" />
+
+        <Button
+            android:id="@+id/buttonOviedo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oviedo Y Centro" />
+
+        <Button
+            android:id="@+id/buttonGijon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gijón Y Alredededores" />
+
+        <Button
+            android:id="@+id/buttonAviles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avilés Y Alrededores" />
+
+        <Button
+            android:id="@+id/ButtonOcci"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Occidente" />
+
+        <Button
+            android:id="@+id/buttonOcci"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Occidente" />
+
+        <Button
+            android:id="@+id/buttoN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPS" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
