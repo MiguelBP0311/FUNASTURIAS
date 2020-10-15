@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.funasturias.ui.main.SectionsPagerAdapter;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 
 public class zona extends AppCompatActivity {
 
@@ -27,6 +29,34 @@ public class zona extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
+
+        String parametroZona= getIntent().getStringExtra("zona");
+        FirebaseFirestore db= FirebaseFirestore.getInstance();
+
+
+        //Consulta para hacer que carguen en una pestaña por ejemplo fiestas, todas las fiestas de esa zona
+
+
+
+
+
+        DocumentReference docRef = db.collection("localidades").document("SF");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
