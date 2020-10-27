@@ -28,17 +28,22 @@ private PantallaZonasArrayAdapter adaptador;
         ListView zonas= findViewById(R.id.seleccionarZonas);
         adaptador= new PantallaZonasArrayAdapter(this);
         zonas.setAdapter(adaptador);
+
         FirebaseFirestore db= FirebaseFirestore.getInstance();
-        db.collection("")
-                .whereEqualTo("capital", true)
+        db.collection("localidades")
+
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
+                                Zona zona= new Zona( document.getId(), (String) document.getData().get("zona"));
+                                adaptador.add(zona);
+
+
                             }
+                            adaptador.notifyDataSetChanged();
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
@@ -48,4 +53,4 @@ private PantallaZonasArrayAdapter adaptador;
     }
 
     }
-}
+

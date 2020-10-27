@@ -19,4 +19,9 @@ public class Zona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public Zona(String id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
 }
