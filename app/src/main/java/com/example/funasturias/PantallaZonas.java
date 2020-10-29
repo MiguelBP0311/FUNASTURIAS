@@ -7,12 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -25,12 +29,14 @@ private PantallaZonasArrayAdapter adaptador;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_zonas);
-        ListView zonas= findViewById(R.id.seleccionarZonas);
+        ListView zonasListView= findViewById(R.id.seleccionarZonas);
         adaptador= new PantallaZonasArrayAdapter(this);
-        zonas.setAdapter(adaptador);
+        zonasListView.setAdapter(adaptador);
 
         FirebaseFirestore db= FirebaseFirestore.getInstance();
+
         db.collection("localidades")
+
 
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -49,6 +55,18 @@ private PantallaZonasArrayAdapter adaptador;
                         }
                     }
                 });
+        zonasListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Zona zona= adaptador.getItem(position);
+                Intent intencion= new Intent(PantallaZonas.this, zonaActivity.class);
+                intencion.putExtra("idZonaPasar", zona.getId());
+                startActivity(intencion);
+            }
+        })
+
+        ;
+
 
     }
 

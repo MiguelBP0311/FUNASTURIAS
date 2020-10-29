@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">FUNASTURIAS</string>
     <string name="title_activity_zona">zona</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Fiestas</string>
+    <string name="tab_text_2">Conciertos </string>
+    <string name="tab_text_3"> Restaurantes </string>
+    <string name="tab_text_4"> Cines </string>
 </resources>

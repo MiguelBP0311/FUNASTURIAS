@@ -37,7 +37,7 @@ private final String TAG= zonaActivity.class.getName();
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
 
-        String parametroZona= getIntent().getStringExtra("zona");
+        String parametroZona= getIntent().getStringExtra("idZonaPasar");
         FirebaseFirestore db= FirebaseFirestore.getInstance();
 
 
@@ -47,7 +47,7 @@ private final String TAG= zonaActivity.class.getName();
 
 
 
-        DocumentReference docRef = db.collection("localidades").document("SF");
+      /*  DocumentReference docRef = db.collection("localidades").document("SF");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -86,7 +86,7 @@ private final String TAG= zonaActivity.class.getName();
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
                     }
-                });
+                });*/ 
 
     }
 }
