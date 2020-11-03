@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.funasturias.FragmentCines;
+import com.example.funasturias.FragmentConciertos;
+import com.example.funasturias.FragmentFiestas;
+import com.example.funasturias.FragmentRestaurantes;
 import com.example.funasturias.R;
 
 /**
@@ -29,7 +33,21 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        if(position==0){
+            return FragmentFiestas.newInstance();
+        }
+        if (position == 1) {
+            return FragmentConciertos.newInstance();
+        }
+        if (position==2){
+            return FragmentRestaurantes.newInstance();
+        }
+        if(position==3){
+            return FragmentCines.newInstance();
+
+
+        }
+        throw new RuntimeException("Error. Posición No válida");
     }
 
     @Nullable
