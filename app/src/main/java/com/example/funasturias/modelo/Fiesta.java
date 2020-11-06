@@ -2,10 +2,10 @@ package com.example.funasturias.modelo;
 
 public class Fiesta {
     private String idLocalidad;
-    private String municipio;
+    private String municipioFiesta;
     private String nombreFiesta;
-    private String fecha;
-    private String descripcion;
+    private String fechaFiesta;
+    private String descripcionFiesta;
 
     public String getIdLocalidad() {
         return idLocalidad;
@@ -15,12 +15,12 @@ public class Fiesta {
         this.idLocalidad = idLocalidad;
     }
 
-    public String getMunicipio() {
-        return municipio;
+    public String getMunicipioFiesta() {
+        return municipioFiesta;
     }
 
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
+    public void setMunicipioFiesta(String municipioFiesta) {
+        this.municipioFiesta = municipioFiesta;
     }
 
     public String getNombreFiesta() {
@@ -31,27 +31,28 @@ public class Fiesta {
         this.nombreFiesta = nombreFiesta;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getFechaFiesta() {
+        return fechaFiesta;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFechaFiesta(String fechaFiesta) {
+        this.fechaFiesta = fechaFiesta;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescripcionFiesta() {
+        return descripcionFiesta;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcionFiesta(String descripcionFiesta) {
+        this.descripcionFiesta = descripcionFiesta;
     }
 
-    public Fiesta(String idLocalidad, String municipio, String nombreFiesta, String fecha, String descripcion) {
+
+    public Fiesta(String idLocalidad, String municipioFiesta, String nombreFiesta, String fechaFiesta, String descripcionFiesta) {
         this.idLocalidad = idLocalidad;
-        this.municipio = municipio;
+        this.municipioFiesta = municipioFiesta;
         this.nombreFiesta = nombreFiesta;
-        this.fecha = fecha;
-        this.descripcion = descripcion;
+        this.fechaFiesta = fechaFiesta;
+        this.descripcionFiesta = descripcionFiesta;
     }
 }

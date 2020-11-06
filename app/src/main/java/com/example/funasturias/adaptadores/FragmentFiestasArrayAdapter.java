@@ -10,13 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.funasturias.R;
+import com.example.funasturias.modelo.Fiesta;
 import com.example.funasturias.modelo.Zona;
 
-public class FragmentFiestasArrayAdapter extends ArrayAdapter<Zona> {
+public class FragmentFiestasArrayAdapter extends ArrayAdapter<Fiesta> {
 
 
     public FragmentFiestasArrayAdapter(@NonNull Context context) {
-        super(context, R.layout.itemzona);
+        super(context, R.layout.itemelementofiesta);
 
 
 
@@ -26,12 +27,18 @@ public class FragmentFiestasArrayAdapter extends ArrayAdapter<Zona> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
          if (convertView==null){
-             convertView= View.inflate(getContext(), R.layout.itemzona, null);
+             convertView= View.inflate(getContext(), R.layout.itemelementofiesta, null);
 
          }
-         TextView texto= convertView.findViewById(R.id.nombrezona);
+         TextView textoNombreFiesta= convertView.findViewById(R.id.textViewNombreFiesta);
+         TextView textoMunicipioFiesta= convertView.findViewById(R.id.textViewMunicipioFiesta);
+         TextView textoFechaFiesta= convertView.findViewById(R.id.textViewFechaFiesta);
+         TextView textoDescripcionFiesta= convertView.findViewById(R.id.textViewDescripcionFiesta);
 
-         texto.setText(getItem(position).getNombre());
+         textoNombreFiesta.setText(getItem(position).getNombreFiesta());
+         textoMunicipioFiesta.setText(getItem(position).getMunicipioFiesta());
+         textoFechaFiesta.setText(getItem(position).getFechaFiesta());
+         textoDescripcionFiesta.setText(getItem(position).getDescripcionFiesta());
 
         return convertView;
     }

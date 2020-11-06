@@ -24,13 +24,12 @@ private final String TAG= ZonaActivity.class.getName();
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
+
 
         String parametroZona= getIntent().getStringExtra("idZonaPasar");
         FirebaseFirestore db= FirebaseFirestore.getInstance();
 
 
-        //Consulta para hacer que carguen en una pestaña por ejemplo fiestas, todas las fiestas de esa zona
 
 
 

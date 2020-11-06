@@ -1,62 +1,92 @@
 package com.example.funasturias.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.funasturias.R;
+import com.example.funasturias.ZonasActivity;
+import com.example.funasturias.adaptadores.FragmentFiestasArrayAdapter;
+import com.example.funasturias.modelo.Fiesta;
+import com.example.funasturias.modelo.Zona;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentFiestas#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FragmentFiestas extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private FragmentFiestasArrayAdapter fiestasAdapter;
+    private final String TAG= FragmentFiestas.class.getName();
 
 
-    // TODO: Rename and change types of parameters
+
 
 
     public FragmentFiestas() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     *
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static FragmentFiestas newInstance() {
         FragmentFiestas fragment = new FragmentFiestas();
-        Bundle args = new Bundle();
 
-        fragment.setArguments(args);
+
+
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
 
-        }
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        fiestasAdapter= new FragmentFiestasArrayAdapter(context);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View vista= inflater.inflate(R.layout.fragment_fiestas, container, false);
+        ListView listaFiestas= vista.findViewById(R.id.fiestasListView);
+        listaFiestas.setAdapter(fiestasAdapter);
+        FirebaseFirestore db= FirebaseFirestore.getInstance();
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fiestas, container, false);
+        db.collection("fiestas")
+
+
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Fiesta fiesta = new Fiesta( document.getString("idlocalidad"),document.getString("municipio"), document.getString("nombre"), document.getString("fecha"), document.getString("descripcion"));
+                               fiestasAdapter.add(fiesta);
+
+
+                            }
+                            fiestasAdapter.notifyDataSetChanged();
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+
+
+
+        return vista;
     }
 }
