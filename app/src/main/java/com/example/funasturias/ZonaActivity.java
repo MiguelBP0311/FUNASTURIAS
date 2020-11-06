@@ -14,6 +14,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ZonaActivity extends AppCompatActivity {
 private final String TAG= ZonaActivity.class.getName();
+private String parametroZona;
+
+    public String getParametroZona() {
+        return parametroZona;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +31,7 @@ private final String TAG= ZonaActivity.class.getName();
         tabs.setupWithViewPager(viewPager);
 
 
-        String parametroZona= getIntent().getStringExtra("idZonaPasar");
-        FirebaseFirestore db= FirebaseFirestore.getInstance();
+        parametroZona= getIntent().getStringExtra("idZonaPasar");
 
 
 
@@ -35,46 +39,7 @@ private final String TAG= ZonaActivity.class.getName();
 
 
 
-      /*  DocumentReference docRef = db.collection("localidades").document("SF");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
 
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        db.collection("")
-                .whereEqualTo("capital", true)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
-                });*/ 
 
     }
 }

@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.funasturias.R;
+import com.example.funasturias.ZonaActivity;
 import com.example.funasturias.ZonasActivity;
 import com.example.funasturias.adaptadores.FragmentFiestasArrayAdapter;
 import com.example.funasturias.modelo.Fiesta;
@@ -29,6 +30,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class FragmentFiestas extends Fragment {
 private FragmentFiestasArrayAdapter fiestasAdapter;
     private final String TAG= FragmentFiestas.class.getName();
+    private String filtraZona;
 
 
 
@@ -52,6 +54,7 @@ private FragmentFiestasArrayAdapter fiestasAdapter;
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         fiestasAdapter= new FragmentFiestasArrayAdapter(context);
+        filtraZona=((ZonaActivity) context).getParametroZona();
     }
 
     @Override
@@ -66,6 +69,7 @@ private FragmentFiestasArrayAdapter fiestasAdapter;
         db.collection("fiestas")
 
 
+               .whereEqualTo("idlocalidad",filtraZona)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
