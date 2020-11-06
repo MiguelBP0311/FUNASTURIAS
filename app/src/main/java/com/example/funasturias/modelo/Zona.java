@@ -1,4 +1,4 @@
-package com.example.funasturias;
+package com.example.funasturias.modelo;
 
 public class Zona {
     private String id;

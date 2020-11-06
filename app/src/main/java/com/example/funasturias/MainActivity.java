@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==1){
             if (resultCode == RESULT_OK) {
-                Intent intencion= new Intent(this, PantallaZonas.class);
+                Intent intencion= new Intent(this, ZonasActivity.class);
                 startActivity(intencion);
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

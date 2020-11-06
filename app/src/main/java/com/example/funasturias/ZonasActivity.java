@@ -8,29 +8,26 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.funasturias.adaptadores.ZonasActivityArrayAdapter;
+import com.example.funasturias.modelo.Zona;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class PantallaZonas extends AppCompatActivity {
-private final String TAG= PantallaZonas.class.getName();
-private PantallaZonasArrayAdapter adaptador;
+public class ZonasActivity extends AppCompatActivity {
+private final String TAG= ZonasActivity.class.getName();
+private ZonasActivityArrayAdapter adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_zonas);
         ListView zonasListView= findViewById(R.id.seleccionarZonas);
-        adaptador= new PantallaZonasArrayAdapter(this);
+        adaptador= new ZonasActivityArrayAdapter(this);
         zonasListView.setAdapter(adaptador);
 
         FirebaseFirestore db= FirebaseFirestore.getInstance();
@@ -59,7 +56,7 @@ private PantallaZonasArrayAdapter adaptador;
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Zona zona= adaptador.getItem(position);
-                Intent intencion= new Intent(PantallaZonas.this, zonaActivity.class);
+                Intent intencion= new Intent(ZonasActivity.this, ZonaActivity.class);
                 intencion.putExtra("idZonaPasar", zona.getId());
                 startActivity(intencion);
             }

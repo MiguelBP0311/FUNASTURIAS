@@ -1,4 +1,4 @@
-package com.example.funasturias;
+package com.example.funasturias.adaptadores;
 
 import android.content.Context;
 import android.view.View;
@@ -9,10 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class PantallaZonasArrayAdapter extends ArrayAdapter<Zona> {
+import com.example.funasturias.R;
+import com.example.funasturias.modelo.Zona;
+
+public class FragmentFiestasArrayAdapter extends ArrayAdapter<Zona> {
 
 
-    public PantallaZonasArrayAdapter(@NonNull Context context) {
+    public FragmentFiestasArrayAdapter(@NonNull Context context) {
         super(context, R.layout.itemzona);
 
 

@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".zonaActivity"
+            android:name=".ZonaActivity"
             android:label="@string/title_activity_zona"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".PantallaZonas" />
+        <activity android:name=".ZonasActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

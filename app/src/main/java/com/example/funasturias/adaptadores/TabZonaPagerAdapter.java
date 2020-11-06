@@ -1,4 +1,4 @@
-package com.example.funasturias.ui.main;
+package com.example.funasturias.adaptadores;
 
 import android.content.Context;
 
@@ -8,23 +8,23 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.funasturias.FragmentCines;
-import com.example.funasturias.FragmentConciertos;
-import com.example.funasturias.FragmentFiestas;
-import com.example.funasturias.FragmentRestaurantes;
+import com.example.funasturias.fragments.FragmentCines;
+import com.example.funasturias.fragments.FragmentConciertos;
+import com.example.funasturias.fragments.FragmentFiestas;
+import com.example.funasturias.fragments.FragmentRestaurantes;
 import com.example.funasturias.R;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class TabZonaPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3, R.string.tab_text_4};
     private final Context mContext;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public TabZonaPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }
