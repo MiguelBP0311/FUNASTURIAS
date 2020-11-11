@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
-        android:id="@+id/textViewNombreArtista"
+        android:id="@+id/textViewNombreRestaurante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Nombre Restaurante" />
 
     <TextView
-        android:id="@+id/textViewGenero"
+        android:id="@+id/textViewTelefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Teléfono del Restuarante" />
 
     <TextView
-        android:id="@+id/textViewgira"
+        android:id="@+id/textViewTipoComida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textViewfechaHora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
+        android:text="Tipo de Comida del Restaurante" />
 </LinearLayout>

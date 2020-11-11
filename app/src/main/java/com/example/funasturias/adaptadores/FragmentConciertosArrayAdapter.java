@@ -13,8 +13,11 @@ import com.example.funasturias.R;
 import com.example.funasturias.modelo.Concierto;
 import com.example.funasturias.modelo.Fiesta;
 
-public class FragmentConciertosArrayAdapter extends ArrayAdapter<Concierto> {
+import java.text.DateFormat;
+import java.util.Locale;
 
+public class FragmentConciertosArrayAdapter extends ArrayAdapter<Concierto> {
+DateFormat formatoFecha= DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT);
 
     public FragmentConciertosArrayAdapter(@NonNull Context context) {
         super(context, R.layout.itemelementoconcierto);
@@ -39,10 +42,11 @@ public class FragmentConciertosArrayAdapter extends ArrayAdapter<Concierto> {
          textoNombreArtista.setText(getItem(position).getArtista());
          textogenero.setText(getItem(position).getGenero());
          textoNombreGira.setText(getItem(position).getGira());
-         textoFechaHora.setText( getItem(position).getFechaHora().toString());
+         textoFechaHora.setText(formatoFecha.format(getItem(position).getFechaHora()));
+
 
         return convertView;
     }
 
-    //Verificar porque no aparece lugar
+
 }

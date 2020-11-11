@@ -1,60 +1,89 @@
 package com.example.funasturias.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.funasturias.R;
 
+import com.example.funasturias.ZonaActivity;
+import com.example.funasturias.adaptadores.FragmentConciertosArrayAdapter;
+import com.example.funasturias.adaptadores.FragmentRestaurantesArrayAdapter;
+import com.example.funasturias.modelo.Concierto;
+import com.example.funasturias.modelo.Restaurante;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentRestaurantes#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class FragmentRestaurantes extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-    // TODO: Rename and change types of parameters
-
+    private FragmentRestaurantesArrayAdapter restaurantesAdapter;
+    private final String TAG= FragmentRestaurantes.class.getName();
+    private String filtraZona;
 
     public FragmentRestaurantes() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-
-     * @return A new instance of fragment FragmentRestaurantes.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FragmentRestaurantes newInstance() {
         FragmentRestaurantes fragment = new FragmentRestaurantes();
-        Bundle args = new Bundle();
 
-        fragment.setArguments(args);
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
 
-        }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        restaurantesAdapter= new FragmentRestaurantesArrayAdapter(context);
+        filtraZona=((ZonaActivity) context).getParametroZona();
     }
 
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_restaurantes, container, false);
+
+        View vista= inflater.inflate(R.layout.fragment_restaurantes, container, false);
+        ListView listaConciertos= vista.findViewById(R.id.ListViewListaRestaurantes);
+        listaConciertos.setAdapter(restaurantesAdapter);
+        FirebaseFirestore db= FirebaseFirestore.getInstance();
+
+        db.collection("Restaurantes")
+
+
+                .whereEqualTo("zona",filtraZona)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Restaurante restaurante= new Restaurante(document.getString("zona"), document.getGeoPoint("direccion"), document.getString("nombre"), document.getString("telefono"), document.getString("tipo_comida"));
+                                restaurantesAdapter.add(restaurante);
+
+
+                            }
+                            restaurantesAdapter.notifyDataSetChanged();
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+
+
+
+        return vista;
     }
+
 }
