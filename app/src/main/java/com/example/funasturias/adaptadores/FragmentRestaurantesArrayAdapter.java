@@ -38,6 +38,7 @@ public class FragmentRestaurantesArrayAdapter extends ArrayAdapter<Restaurante> 
         textoNombreRestaurante.setText(getItem(position).getNombre());
         textoTelefono.setText(getItem(position).getTelefono());
         tipoComida.setText(getItem(position).getTipoComida());
+        //
 
 
 
