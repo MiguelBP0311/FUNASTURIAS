@@ -1,6 +1,7 @@
 package com.example.funasturias.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,15 +11,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.funasturias.R;
+import com.example.funasturias.WebCines;
 import com.example.funasturias.ZonaActivity;
+import com.example.funasturias.ZonasActivity;
 import com.example.funasturias.adaptadores.FragmentCinesArrayAdapter;
 import com.example.funasturias.adaptadores.FragmentConciertosArrayAdapter;
 import com.example.funasturias.adaptadores.FragmentFiestasArrayAdapter;
 import com.example.funasturias.modelo.Cine;
 import com.example.funasturias.modelo.Concierto;
+import com.example.funasturias.modelo.Zona;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,6 +35,7 @@ public class FragmentCines extends Fragment {
     private String filtraZona;
     private FragmentCinesArrayAdapter cinesAdapter;
     private final String TAG= FragmentCines.class.getName();
+
 
 
     public FragmentCines() {
@@ -53,9 +59,10 @@ public class FragmentCines extends Fragment {
                              Bundle savedInstanceState) {
 
         View vista= inflater.inflate(R.layout.fragment_cines, container, false);
-        ListView listaConciertos= vista.findViewById(R.id.listViewListaCines);
-        listaConciertos.setAdapter(cinesAdapter);
+        ListView listaCines= vista.findViewById(R.id.listViewListaCines);
+        listaCines.setAdapter(cinesAdapter);
         FirebaseFirestore db= FirebaseFirestore.getInstance();
+
 
         db.collection("Cines")
 
@@ -80,9 +87,24 @@ public class FragmentCines extends Fragment {
                 });
 
 
+        listaCines.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cine cine= cinesAdapter.getItem(position);
+                Intent intencion= new Intent(getContext(), WebCines.class);
+                //intencion.putExtra("idZonaPasar", zona.getId());
+                startActivity(intencion);
 
+
+
+
+            }
+        });
 
         return vista;
+
+
+
     }
 
 }

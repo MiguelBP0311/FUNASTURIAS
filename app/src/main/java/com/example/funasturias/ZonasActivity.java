@@ -59,6 +59,10 @@ private ZonasActivityArrayAdapter adaptador;
                 Intent intencion= new Intent(ZonasActivity.this, ZonaActivity.class);
                 intencion.putExtra("idZonaPasar", zona.getId());
                 startActivity(intencion);
+
+
+
+
             }
         })
 
