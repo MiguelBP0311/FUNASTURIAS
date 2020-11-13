@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.funasturias.R;
-import com.example.funasturias.fragments.FragmentRestaurantes;
+
 import com.example.funasturias.modelo.Restaurante;
 
 public class FragmentRestaurantesArrayAdapter extends ArrayAdapter<Restaurante> {
