@@ -12,13 +12,12 @@ public class WebCines extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_cines);
         WebView navegadorChromeEmbebido= findViewById(R.id.chromeEmbed);
-        navegadorChromeEmbebido.loadUrl("https://play.los40.com/");
+        String URLCine= getIntent().getStringExtra("URL");
+        navegadorChromeEmbebido.loadUrl(URLCine);
         navegadorChromeEmbebido.getSettings().setJavaScriptEnabled(true);
 
 
-        /*
-        Pasar la URL de los cines por parámetro para caragr la web del cine
-         */
+
 
     }
 }

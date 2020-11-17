@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WebCines"></activity>
+        <activity android:name=".InfoConciertos"></activity>
+        <activity android:name=".WebCines" />
         <activity
             android:name=".ZonaActivity"
             android:label="@string/title_activity_zona"

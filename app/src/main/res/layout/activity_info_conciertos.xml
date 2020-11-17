@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textViewInfoArtista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Artsita" />
+
+    <TextView
+        android:id="@+id/textViewInfoGenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Género Musical: EJ POP" />
+
+    <TextView
+        android:id="@+id/textViewInfoFechaHora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fech y Hora: EJ: 01-01-2020 16:00" />
+
+    <Button
+        android:id="@+id/buttonInfoLugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lugar del Concierto. Se Abre Google Maps" />
+
+    <TextView
+        android:id="@+id/textViewMasInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Más información del Artista+ Spotify+ Canal de YouTube" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewYouTube"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/logoyoutube" />
+
+        <ImageView
+            android:id="@+id/imageViewSpotify"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/logospotify" />
+
+        <ImageView
+            android:id="@+id/imageViewGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/logogoogle" />
+
+    </LinearLayout>
+</LinearLayout>

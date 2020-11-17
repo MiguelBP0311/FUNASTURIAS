@@ -92,7 +92,7 @@ public class FragmentCines extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Cine cine= cinesAdapter.getItem(position);
                 Intent intencion= new Intent(getContext(), WebCines.class);
-                //intencion.putExtra("idZonaPasar", zona.getId());
+                intencion.putExtra("URL", cine.getUrl());
                 startActivity(intencion);
 
 
