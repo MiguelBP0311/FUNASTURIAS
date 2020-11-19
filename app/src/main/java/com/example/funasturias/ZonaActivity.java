@@ -1,10 +1,14 @@
 package com.example.funasturias;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +33,10 @@ private String parametroZona;
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        Toolbar toolbar= findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         parametroZona= getIntent().getStringExtra("idZonaPasar");
@@ -40,6 +48,17 @@ private String parametroZona;
 
 
 
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==android.R.id.home){
+            finish();
+            return true;
+        } else{
+            return super.onOptionsItemSelected(item);
+        }
 
     }
 }

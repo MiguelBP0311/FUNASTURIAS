@@ -13,7 +13,7 @@
         <activity android:name=".WebCines" />
         <activity
             android:name=".ZonaActivity"
-            android:label="@string/title_activity_zona"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ZonasActivity" />
         <activity android:name=".MainActivity">

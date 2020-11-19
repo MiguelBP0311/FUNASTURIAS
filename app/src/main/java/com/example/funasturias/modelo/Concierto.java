@@ -2,15 +2,19 @@ package com.example.funasturias.modelo;
 
 import com.google.firebase.firestore.GeoPoint;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Concierto {
+public class Concierto implements Serializable {
     private String idZona;
     private GeoPoint lugar;
     private String artista;
     private Date fechaHora;
     private String gira;
     private String genero;
+    private String URLGoogle;
+    private String URLYouTube;
+    private String URLSpotify;
 
     public String getIdZona() {
         return idZona;
@@ -60,13 +64,40 @@ public class Concierto {
         this.genero = genero;
     }
 
-    public Concierto(String idZona, GeoPoint lugar, String artista, Date fechaHora, String gira, String genero) {
+    public String getURLGoogle() {
+        return URLGoogle;
+    }
+
+    public void setURLGoogle(String URLGoogle) {
+        this.URLGoogle = URLGoogle;
+    }
+
+    public String getURLYouTube() {
+        return URLYouTube;
+    }
+
+    public void setURLYouTube(String URLYouTube) {
+        this.URLYouTube = URLYouTube;
+    }
+
+    public String getURLSpotify() {
+        return URLSpotify;
+    }
+
+    public void setURLSpotify(String URLSpotify) {
+        this.URLSpotify = URLSpotify;
+    }
+
+    public Concierto(String idZona, GeoPoint lugar, String artista, Date fechaHora, String gira, String genero, String URLGoogle, String URLSpotify, String URLYouTube) {
         this.idZona = idZona;
         this.lugar = lugar;
         this.artista = artista;
         this.fechaHora = fechaHora;
         this.gira = gira;
         this.genero = genero;
+        this.URLGoogle= URLGoogle;
+        this.URLSpotify=URLSpotify;
+        this.URLYouTube=URLYouTube;
 
 
 
