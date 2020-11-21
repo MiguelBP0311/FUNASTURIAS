@@ -27,13 +27,12 @@ public class FragmentCinesArrayAdapter extends ArrayAdapter<Cine> {
 
         }
         TextView textoNombreCine= convertView.findViewById(R.id.textViewNombreCine);
-        TextView paginaWebCine= convertView.findViewById(R.id.textViewURLCine);
+
 
 
 
 
         textoNombreCine.setText(getItem(position).getNombreCine());
-        paginaWebCine.setText(getItem(position).getUrl());
 
 
 

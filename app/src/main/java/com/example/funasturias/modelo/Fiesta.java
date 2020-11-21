@@ -1,6 +1,8 @@
 package com.example.funasturias.modelo;
 
-public class Fiesta {
+import java.io.Serializable;
+
+public class Fiesta implements Serializable {
     private String idLocalidad;
     private String municipioFiesta;
     private String nombreFiesta;

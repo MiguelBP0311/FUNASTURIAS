@@ -16,12 +16,12 @@ import android.widget.ListView;
 
 import com.example.funasturias.InfoConciertos;
 import com.example.funasturias.R;
-import com.example.funasturias.WebCines;
+
 import com.example.funasturias.ZonaActivity;
 import com.example.funasturias.adaptadores.FragmentConciertosArrayAdapter;
-import com.example.funasturias.modelo.Cine;
+
 import com.example.funasturias.modelo.Concierto;
-import com.example.funasturias.modelo.Fiesta;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -104,5 +104,10 @@ public class FragmentConciertos extends Fragment {
 
         return vista;
     }
-//Convertir el Geopoint en Serializable y yerminar la pantalla infococniertos
+// Póximo día: Convertir el Geopoint en Serializable y terminar la pantalla infococniertos
+    //Por hacer: Comentarios en restuarantes,  pantalla info restuarantes
+    //Meter alguna foto
+    //Opcional: Ubicación automática
+    //Opcional: Comentarios en Fiestas
+    //Opcional, dar mejor formato a la APP
 }

@@ -30,13 +30,13 @@ public class FragmentRestaurantesArrayAdapter extends ArrayAdapter<Restaurante> 
 
         }
         TextView textoNombreRestaurante= convertView.findViewById(R.id.textViewNombreRestaurante);
-        TextView textoTelefono= convertView.findViewById(R.id.textViewTelefono);
+
         TextView tipoComida= convertView.findViewById(R.id.textViewTipoComida);
 
 
 
         textoNombreRestaurante.setText(getItem(position).getNombre());
-        textoTelefono.setText(getItem(position).getTelefono());
+
         tipoComida.setText(getItem(position).getTipoComida());
         //
 

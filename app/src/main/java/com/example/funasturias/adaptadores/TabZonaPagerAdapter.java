@@ -14,10 +14,7 @@ import com.example.funasturias.fragments.FragmentFiestas;
 import com.example.funasturias.fragments.FragmentRestaurantes;
 import com.example.funasturias.R;
 
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
+
 public class TabZonaPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes

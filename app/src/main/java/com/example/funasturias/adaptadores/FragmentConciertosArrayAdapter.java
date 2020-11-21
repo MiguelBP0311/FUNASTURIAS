@@ -11,10 +11,10 @@ import androidx.annotation.Nullable;
 
 import com.example.funasturias.R;
 import com.example.funasturias.modelo.Concierto;
-import com.example.funasturias.modelo.Fiesta;
+
 
 import java.text.DateFormat;
-import java.util.Locale;
+
 
 public class FragmentConciertosArrayAdapter extends ArrayAdapter<Concierto> {
 DateFormat formatoFecha= DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT);

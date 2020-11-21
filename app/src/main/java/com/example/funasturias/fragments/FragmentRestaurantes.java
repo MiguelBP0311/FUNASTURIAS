@@ -15,9 +15,9 @@ import android.widget.ListView;
 import com.example.funasturias.R;
 
 import com.example.funasturias.ZonaActivity;
-import com.example.funasturias.adaptadores.FragmentConciertosArrayAdapter;
+
 import com.example.funasturias.adaptadores.FragmentRestaurantesArrayAdapter;
-import com.example.funasturias.modelo.Concierto;
+
 import com.example.funasturias.modelo.Restaurante;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

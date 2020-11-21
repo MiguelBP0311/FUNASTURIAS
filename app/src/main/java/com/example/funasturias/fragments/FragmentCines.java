@@ -17,13 +17,11 @@ import android.widget.ListView;
 import com.example.funasturias.R;
 import com.example.funasturias.WebCines;
 import com.example.funasturias.ZonaActivity;
-import com.example.funasturias.ZonasActivity;
+
 import com.example.funasturias.adaptadores.FragmentCinesArrayAdapter;
-import com.example.funasturias.adaptadores.FragmentConciertosArrayAdapter;
-import com.example.funasturias.adaptadores.FragmentFiestasArrayAdapter;
+
 import com.example.funasturias.modelo.Cine;
-import com.example.funasturias.modelo.Concierto;
-import com.example.funasturias.modelo.Zona;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
