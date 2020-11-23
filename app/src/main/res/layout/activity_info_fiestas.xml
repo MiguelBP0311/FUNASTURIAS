@@ -10,20 +10,32 @@
         android:id="@+id/textViewInfoNombreFiesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="#0A93FF"
+        android:capitalize="words"
         android:text="Nombre de la Fiesta"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FDCE00"
+        app:drawableTint="#F3E5F5" />
 
     <TextView
         android:id="@+id/textViewInfoMunicipio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Municipio de la Fiesta: EJ: Oviedo" />
+        android:background="#D80606"
+        android:text="Municipio de la Fiesta: EJ: Oviedo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/textViewInfoFechaFiesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fechas en las que se desarrolla la fiesta " />
+        android:background="#00897B"
+        android:backgroundTint="#00897B"
+        android:text="Fechas en las que se desarrolla la fiesta "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/textViewInfoDescripcionFiesta"

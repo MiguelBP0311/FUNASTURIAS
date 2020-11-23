@@ -30,7 +30,7 @@
         android:text="Ubicacion del restaurante. Se abre Google Maps" />
 
     <Button
-        android:id="@+id/buttonInfoComenatrios"
+        android:id="@+id/buttonValoraciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Valoraciones de los Usuarios" />
