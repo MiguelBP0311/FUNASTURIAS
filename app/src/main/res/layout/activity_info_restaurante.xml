@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewInfoNombreRestaurante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Restaurante" />
+
+    <TextView
+        android:id="@+id/textViewInfotelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teléfono del Restaurante EJ: 985 XX XX XX" />
+
+    <TextView
+        android:id="@+id/textViewInfoComida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de comida EJ: Italiano" />
+
+    <Button
+        android:id="@+id/buttonInfoUbicacionRestaurante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ubicacion del restaurante. Se abre Google Maps" />
+
+    <Button
+        android:id="@+id/buttonInfoComenatrios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valoraciones de los Usuarios" />
+</LinearLayout>

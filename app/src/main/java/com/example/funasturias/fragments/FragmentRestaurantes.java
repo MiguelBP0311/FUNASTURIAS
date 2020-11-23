@@ -1,6 +1,7 @@
 package com.example.funasturias.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,14 +11,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.funasturias.InfoConciertos;
+import com.example.funasturias.InfoRestaurante;
 import com.example.funasturias.R;
 
 import com.example.funasturias.ZonaActivity;
 
 import com.example.funasturias.adaptadores.FragmentRestaurantesArrayAdapter;
 
+import com.example.funasturias.modelo.Concierto;
 import com.example.funasturias.modelo.Restaurante;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -54,8 +59,8 @@ public class FragmentRestaurantes extends Fragment {
                              Bundle savedInstanceState) {
 
         View vista= inflater.inflate(R.layout.fragment_restaurantes, container, false);
-        ListView listaConciertos= vista.findViewById(R.id.ListViewListaRestaurantes);
-        listaConciertos.setAdapter(restaurantesAdapter);
+        ListView listaRestaurantes= vista.findViewById(R.id.ListViewListaRestaurantes);
+        listaRestaurantes.setAdapter(restaurantesAdapter);
         FirebaseFirestore db= FirebaseFirestore.getInstance();
 
         db.collection("Restaurantes")
@@ -79,6 +84,16 @@ public class FragmentRestaurantes extends Fragment {
                         }
                     }
                 });
+
+        listaRestaurantes.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Restaurante restaurante=restaurantesAdapter.getItem(position);
+                Intent intencion= new Intent(getContext(), InfoRestaurante.class);
+                intencion.putExtra("todoInfoRestaurante", restaurante);
+                startActivity(intencion);
+            }
+        });
 
 
 

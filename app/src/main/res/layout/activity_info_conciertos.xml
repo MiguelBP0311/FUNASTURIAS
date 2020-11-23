@@ -34,7 +34,7 @@
         android:id="@+id/textViewMasInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Más información del Artista a tarvés de Google+ Spotify+ Canal de YouTube" />
+        android:text="Más información del Artista a través de Google+ Spotify+ Canal de YouTube" />
 
     <LinearLayout
         android:layout_width="match_parent"

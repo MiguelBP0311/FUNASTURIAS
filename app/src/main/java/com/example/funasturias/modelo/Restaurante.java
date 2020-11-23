@@ -2,18 +2,19 @@ package com.example.funasturias.modelo;
 
 import com.google.firebase.firestore.GeoPoint;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Restaurante {
+public class Restaurante implements Serializable {
     private String idZona;
-    private GeoPoint lugarRestaurante;
+    private Posicion lugarRestaurante;
     private String nombre;
     private String telefono;
     private String tipoComida;
 
     public Restaurante(String idZona, GeoPoint lugarRestaurante, String nombre, String telefono, String tipoComida) {
         this.idZona = idZona;
-        this.lugarRestaurante = lugarRestaurante;
+        this.lugarRestaurante = new Posicion(lugarRestaurante.getLatitude(), lugarRestaurante.getLongitude());
         this.nombre = nombre;
         this.telefono = telefono;
         this.tipoComida = tipoComida;
@@ -27,11 +28,11 @@ public class Restaurante {
         this.idZona = idZona;
     }
 
-    public GeoPoint getLugarRestaurante() {
+    public Posicion getLugarRestaurante() {
         return lugarRestaurante;
     }
 
-    public void setLugarRestaurante(GeoPoint lugarRestaurante) {
+    public void setLugarRestaurante(Posicion lugarRestaurante) {
         this.lugarRestaurante = lugarRestaurante;
     }
 

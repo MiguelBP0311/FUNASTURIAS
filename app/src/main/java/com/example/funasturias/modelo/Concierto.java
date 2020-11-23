@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Concierto implements Serializable {
     private String idZona;
-    private GeoPoint lugar;
+    private Posicion lugar;
     private String artista;
     private Date fechaHora;
     private String gira;
@@ -24,11 +24,11 @@ public class Concierto implements Serializable {
         this.idZona = idZona;
     }
 
-    public GeoPoint getLugar() {
+    public Posicion getLugar() {
         return lugar;
     }
 
-    public void setLugar(GeoPoint lugar) {
+    public void setLugar(Posicion lugar) {
         this.lugar = lugar;
     }
 
@@ -90,7 +90,7 @@ public class Concierto implements Serializable {
 
     public Concierto(String idZona, GeoPoint lugar, String artista, Date fechaHora, String gira, String genero, String URLGoogle, String URLSpotify, String URLYouTube) {
         this.idZona = idZona;
-        this.lugar = lugar;
+        this.lugar = new Posicion(lugar.getLatitude(), lugar.getLongitude());
         this.artista = artista;
         this.fechaHora = fechaHora;
         this.gira = gira;

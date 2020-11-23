@@ -105,9 +105,5 @@ public class FragmentConciertos extends Fragment {
         return vista;
     }
 // Póximo día: Convertir el Geopoint en Serializable y terminar la pantalla infococniertos
-    //Por hacer: Comentarios en restuarantes,  pantalla info restuarantes
-    //Meter alguna foto
-    //Opcional: Ubicación automática
-    //Opcional: Comentarios en Fiestas
-    //Opcional, dar mejor formato a la APP
+
 }
