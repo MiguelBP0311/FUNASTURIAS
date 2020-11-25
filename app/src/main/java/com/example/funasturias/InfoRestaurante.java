@@ -52,14 +52,21 @@ public class InfoRestaurante extends AppCompatActivity {
         });
 
 
+        botonOpiniones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intencion= new Intent(InfoRestaurante.this, ComentariosRestauranteActivity.class);
+                intencion.putExtra("idRestaurantePasar", restaurante.getIdRestaurante());
+                startActivity(intencion);
+            }
+        });
+
+
 
 
 
     }
 
-//Por hacer: Comentarios en restuarantes,  terminar Pantalla info restuarantes
-    //Meter alguna foto tanto local, como en Firebase
-    // En Casa:  dar mejor formato a la APP
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

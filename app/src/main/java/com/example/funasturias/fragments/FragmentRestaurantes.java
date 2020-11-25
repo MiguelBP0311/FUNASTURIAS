@@ -73,7 +73,7 @@ public class FragmentRestaurantes extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Restaurante restaurante= new Restaurante(document.getString("zona"), document.getGeoPoint("direccion"), document.getString("nombre"), document.getString("telefono"), document.getString("tipo_comida"));
+                                Restaurante restaurante= new Restaurante(document.getString("zona"), document.getGeoPoint("direccion"), document.getString("nombre"), document.getString("telefono"), document.getString("tipo_comida"), document.getId());
                                 restaurantesAdapter.add(restaurante);
 
 

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfoRestaurante"></activity>
+        <activity android:name=".ComentariosRestauranteActivity"></activity>
+        <activity android:name=".InfoRestaurante" />
         <activity android:name=".InfoFiestas" />
         <activity android:name=".InfoConciertos" />
         <activity android:name=".WebCines" />

@@ -11,13 +11,15 @@ public class Restaurante implements Serializable {
     private String nombre;
     private String telefono;
     private String tipoComida;
+    private String idRestaurante;
 
-    public Restaurante(String idZona, GeoPoint lugarRestaurante, String nombre, String telefono, String tipoComida) {
+    public Restaurante(String idZona, GeoPoint lugarRestaurante, String nombre, String telefono, String tipoComida, String idRestaurante) {
         this.idZona = idZona;
         this.lugarRestaurante = new Posicion(lugarRestaurante.getLatitude(), lugarRestaurante.getLongitude());
         this.nombre = nombre;
         this.telefono = telefono;
         this.tipoComida = tipoComida;
+        this.idRestaurante=idRestaurante;
     }
 
     public String getIdZona() {
@@ -58,6 +60,14 @@ public class Restaurante implements Serializable {
 
     public void setTipoComida(String tipoComida) {
         this.tipoComida = tipoComida;
+    }
+
+    public String getIdRestaurante() {
+        return idRestaurante;
+    }
+
+    public void setIdRestaurante(String idRestaurante) {
+        this.idRestaurante = idRestaurante;
     }
 }
 
