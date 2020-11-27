@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
             } else{
-               Toast mensajeNoRegistrado= Toast.makeText(this, "Si quiere usar esta APP es necesario registrarse. Use su email o Cuenta de Google", Toast.LENGTH_LONG);
+               Toast mensajeNoRegistrado= Toast.makeText(this, "Si quiere usar esta APP es necesario registrarse. Use su email o Cuenta de Google. También es necesario disponer de conexión a Internet", Toast.LENGTH_LONG);
                 mensajeNoRegistrado.show();
             }
         }
