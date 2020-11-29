@@ -29,12 +29,14 @@ public class InfoConciertos extends AppCompatActivity {
         TextView informacionArtista= findViewById(R.id.textViewInfoArtista);
         TextView informacionGenero= findViewById(R.id.textViewInfoGenero);
         TextView informacionFechaHora= findViewById(R.id.textViewInfoFechaHora);
+        TextView informacionGira= findViewById(R.id.textViewInfoGira);
         Button botonLugar= findViewById(R.id.buttonInfoLugar);
         ImageView imagenGoogle= findViewById(R.id.imageViewGoogle);
         ImageView imagenSpotify= findViewById(R.id.imageViewSpotify);
         ImageView imageViewYouTube= findViewById(R.id.imageViewYouTube);
         informacionArtista.setText(concierto.getArtista());
         informacionGenero.setText(concierto.getGenero());
+        informacionGira.setText(concierto.getGira());
         informacionFechaHora.setText(formatoFecha.format(concierto.getFechaHora()));
 
         botonLugar.setOnClickListener(new View.OnClickListener() {

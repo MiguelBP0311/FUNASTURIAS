@@ -13,6 +13,12 @@
         android:text="Nombre del Artsita" />
 
     <TextView
+        android:id="@+id/textViewInfoGira"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gira del artista" />
+
+    <TextView
         android:id="@+id/textViewInfoGenero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,4 +69,15 @@
             app:srcCompat="@drawable/logogoogle" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/musicinspireslife" />
 </LinearLayout>

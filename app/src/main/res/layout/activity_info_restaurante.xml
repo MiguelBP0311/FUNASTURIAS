@@ -34,4 +34,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Valoraciones de los Usuarios" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="273dp"
+        app:srcCompat="@drawable/fabada" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        app:srcCompat="@drawable/cachopo" />
+
 </LinearLayout>
