@@ -2,12 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/textViewNombreCine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre del Cine" />
+        android:text="Nombre del Cine"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
 
 </LinearLayout>
