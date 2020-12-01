@@ -3,20 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:padding="20dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
     <TextView
         android:id="@+id/textViewInfoNombreRestaurante"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre del Restaurante" />
+        android:text="Nombre del Restaurante"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/textViewInfotelefono"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Teléfono del Restaurante EJ: 985 XX XX XX" />
-
+</LinearLayout>
     <TextView
         android:id="@+id/textViewInfoComida"
         android:layout_width="match_parent"
@@ -34,17 +41,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Valoraciones de los Usuarios" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="273dp"
-        app:srcCompat="@drawable/fabada" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="match_parent"
-        android:layout_height="112dp"
-        app:srcCompat="@drawable/cachopo" />
 
 </LinearLayout>

@@ -3,36 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
 
     <TextView
         android:id="@+id/textViewInfoArtista"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre del Artsita" />
-
-    <TextView
-        android:id="@+id/textViewInfoGira"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gira del artista" />
-
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="Nombre del Artsita"
+        android:layout_weight="1"/>
     <TextView
         android:id="@+id/textViewInfoGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:text="Género Musical: EJ POP" />
+
+</LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Género Musical: EJ POP" />
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+    <TextView
+        android:id="@+id/textViewInfoGira"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="Gira del artista"
+        android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/textViewInfoFechaHora"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fech y Hora: EJ: 01-01-2020 16:00" />
-
+    </LinearLayout>
     <Button
         android:id="@+id/buttonInfoLugar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lugar del Concierto. Se Abre Google Maps" />
 
